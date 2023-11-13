@@ -13,30 +13,7 @@ import { getData } from './api/Apis';
 function App() {
   const [W_data, setW_data] = useState('')
   const [Forecast_data, setForecast_data] = useState('')
-  const [Air_data, setAir_data] = useState({
-    "coord": {
-    "lon": 72.8774,
-    "lat": 19.0761
-    },
-    "list": [
-    {
-    "main": {
-    "aqi": 5
-    },
-    "components": {
-    "co": 3136.23,
-    "no": 3.74,
-    "no2": 60.32,
-    "o3": 234.6,
-    "so2": 91.55,
-    "pm2_5": 264.55,
-    "pm10": 332.96,
-    "nh3": 27.11
-    },
-    "dt": 1699862405
-    }
-    ]
-    })
+  const [Air_data, setAir_data] = useState('')
   const [Srch_val, setSrch_val] = useState('mumbai')
   const [LAT, setLAT] = useState(19.0785451)
   const [LON, setLON] = useState(72.878176)
@@ -52,7 +29,7 @@ function App() {
   useEffect(() => {
     weather_fun()
     forecast_fun()
-    // air_fun()
+    air_fun()
   }, [LAT,LON])
 
 
