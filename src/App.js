@@ -103,7 +103,7 @@ if (!Forecast_data || !Air_data) {
 
   return (
     <div className="App">
-      <nav className="container-fluid d-flex justify-content-between  align-items-center  px-5 p-4  ">
+      <nav className="container-fluid d-flex flex-column gap-2 flex-md-row  justify-content-between  align-items-center  px-5 p-4  ">
         <a className="navbar-brand fs-1 fw-bolder text-white" href="#">WEATHER</a>
 
 
@@ -122,7 +122,7 @@ if (!Forecast_data || !Air_data) {
           </div> */}
         </div>
 
-        <button onClick={getLocation} className='btn btn-primary rounded-5 d-flex justify-content-center align-items-center fw-bold py-2 px-4'> <IoLocationOutline size={20} className='me-1 ' /> <h5 className=' '>Current Location</h5></button>
+        <button onClick={getLocation} className='btn btn-primary rounded-5 d-flex justify-content-center align-items-center fw-bold py-1 py-md-2 px-4 '> <IoLocationOutline size={20} className='me-1 ' /> <h5 className=' '>Current Location</h5></button>
       </nav>
 
       { showError ? <h3 className='text-center'>invalid city name</h3>:''}
