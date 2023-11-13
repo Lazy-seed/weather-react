@@ -1,57 +1,40 @@
-import React, { useEffect } from 'react'
+import React, { useState } from 'react'
 import { Card, CardBody, Col, Container, Row } from 'reactstrap'
 import Card1 from './Card1'
 import Card2 from './Card2'
 import Card3 from './Card3'
 import Card4 from './Card4'
-import axios from "axios"
 
-export default function Home() {
-
-const URI='https://api.openweathermap.org/data/2.5/weather?lat=19.0144&lon=72.8479&units=metric'
-const api_key='244bca3376d5c5818bc33c811688c2fb'
-
-useEffect(() => {
-    getData()
-}, [])
+export default function Home({W_data,Forecast_data,Air_data}) {
 
 
-    const getData =() =>{
-        axios.get(`${URI}&appid=${api_key}`).then((res)=>{
-            console.log(res.data);
-        }).catch((err)=>{
-            console.log(err);
-        })
-    }
-    
+
     return (
         <Container fluid='sm' className='mt-5'>
             <Row className='gy-4 match-height'>
                 <Col md="4">
-                    <Card className='bg-dark'>
+                    <Card className=' '>
                         <CardBody>
-                            <Card1 />
+                            <Card1 W_data={W_data}/>
                         </CardBody>
                     </Card>
                 </Col>
                 <Col md="8">
-                    <Card className='bg-dark'>
-                        <CardBody>
-                            <Card2 />
-                        </CardBody>
-                    </Card>
+                    
+                            <Card2 W_data={W_data} Air_data={Air_data}/>
+                       
                 </Col>
                 <Col md="4">
-                    <Card className='bg-dark'>
+                    <Card className=' '>
                         <CardBody>
-                            <Card3 />
+                            <Card3  Forecast_data={Forecast_data}/>
                         </CardBody>
                     </Card>
                 </Col>
                 <Col md="8">
-                    <Card className='bg-dark'>
+                    <Card className=' '>
                         <CardBody>
-                            <Card4 />
+                            <Card4 W_data={W_data}/>
                         </CardBody>
                     </Card>
                 </Col>
