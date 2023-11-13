@@ -86,7 +86,7 @@ function App() {
     });
   }
 
-if (!Forecast_data) {
+if (!Forecast_data || !Air_data) {
   return <div className="cont"><div className="spinner">
   <div></div>
   <div></div>
